@@ -19,8 +19,9 @@ class DataParsingLeaderboard(private var context: Context, private val rv: Recyc
             var leaderboard = jsonToArray.getJSONObject(i)
             var nickname = leaderboard.getString("nickname")
             var totalPoint = leaderboard.getInt("totalPoint")
+            var id = 0
 
-            leaderboardList.add(Leaderboard(id = 0, nickname = nickname, totalPoint = totalPoint))
+            leaderboardList.add(Leaderboard(id = id++, nickname = nickname, totalPoint = totalPoint))
         }
         return null
     }

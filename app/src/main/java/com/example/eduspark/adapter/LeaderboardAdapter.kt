@@ -23,7 +23,8 @@ class LeaderboardAdapter(private val leaderboardList: List<Leaderboard>): Recycl
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val leaderboard = leaderboardList[position]
-        holder.tvNickName.text = leaderboard.nickname
+        var number = position + 1
+        holder.tvNickName.text = "${number++}. ${leaderboard.nickname}"
         holder.tvTotalPoint.text = leaderboard.totalPoint.toString()
     }
 
